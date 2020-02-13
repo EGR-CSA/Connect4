@@ -24,7 +24,7 @@ public class GameBoard{
     int checkInput(int column){
         //check if the column is a valid location to place the player piece
         //if not, ask for a valid column
-        //return a valid column
+        //return the original column, or the updated column if it was not a valid location
         
         return column;
     }
@@ -32,5 +32,7 @@ public class GameBoard{
     public String toString(){
         //return a string with the gameBoard 2D array formatted
         //to look like a connect 4 game.
+
+        return "";
     }
 }
