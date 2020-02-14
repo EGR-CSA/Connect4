@@ -5,6 +5,12 @@ public class GameBoard{
     
     public GameBoard(){
         //initializes gameBoard with empty spaces
+        String[][] gameBoard = new String[6][7];
+        for(int i = 0; i < 6; i ++){
+            for(int j = 0; j < 7; j++){
+                gameBoard[i][j] = "--";
+            }
+        }
     }
 
     public int addPiece(int column, char player){
