@@ -48,12 +48,13 @@ public class GameBoard{
             for(int j = 0; j<columns; j++){
                 System.out.print("- "+gameBoard[i][j]+" -");
             }
-            System.out.println();
+            System.out.println(); 
         }
         return "";
     }
 
     public String rageQuit(char player){
+        System.out.println("You have rage quit the game!");
         //Display a broken connect 4 game and a 
         //message about the rageQuit
         System.out.println("|_|_|_|_|_|_|_|	/        /_|_|_|_|_|_|_|		X");
