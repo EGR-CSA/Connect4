@@ -37,8 +37,21 @@ public class GameBoard{
     }
 
     public String rageQuit(char player){
+        System.out.println("You have rage quit the game");
         //Display a broken connect 4 game and a 
         //message about the rageQuit
+        Scanner input = new Scanner(System.in);
+        System.out.println("Player "+player+" has decided to quit. Enter secret code: ");
+        String rage = input.nextLine();
+        rage.toUpperCase();
+        String toReturn;
+        if(rage.equals("I AM VERY MAD")){
+            
+        }else{
+            toReturn = "Ragequit failed!";
+        }
+
+        return toReturn;
 
     }
 }
