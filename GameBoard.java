@@ -58,11 +58,11 @@ public class GameBoard{
         //Display a broken connect 4 game and a 
         //message about the rageQuit
         System.out.println("|_|_|_|_|_|_|_|	/        /_|_|_|_|_|_|_|		X");
-        System.out.println("|_|_|_|_|_|_|_|	\        \_|_|_|_|_|_|_|		       O");
+        System.out.println("|_|_|_|_|_|_|_|	\\        \\_|_|_|_|_|_|_|		       O");
         System.out.println("|_|_|_|_|_|_|_|	/        /_|_|_|_|_|_|_| 	X	");
-        System.out.println("|_|_|_|_|_|_|_|	\        \_|_|_|_|_|_|_|		O");
+        System.out.println("|_|_|_|_|_|_|_|	\\        \\_|_|_|_|_|_|_|		O");
         System.out.println("|_|_|_|_|_|_|_| /       / _|_|_|_|_|_|_|                            O  X  ");
-        System.out.println("|_|_|_|_|_|_|_|	\       \ _|_|_|_|_|_|_| 	        	X");
+        System.out.println("|_|_|_|_|_|_|_|	\\       \\ _|_|_|_|_|_|_| 	        	X");
         System.out.println("|_|_|_|_|_|_|_|/       /_|_|_|_|_|_|_|_|    O   O");
         System.out.println("|	X		O	                       |		X");
         System.out.println("|		X		O                      |	    O");
