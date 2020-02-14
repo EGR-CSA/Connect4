@@ -38,12 +38,16 @@ public class GameBoard{
     public String toString(){
         //return a string with the gameBoard 2D array formatted
         //to look like a connect 4 game.
-        System.out.println("TEST");
+        for(int i = 0; i<rows; i++){
+            for(int j = 0; j<columns; j++){
+                System.out.print("- "+gameBoard[i][j]+" -");
+            }
+            System.out.println();
+        }
         return "";
     }
 
     public String rageQuit(char player){
-        System.out.println("You have rage quit the game");
         //Display a broken connect 4 game and a 
         //message about the rageQuit
 
