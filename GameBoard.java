@@ -10,7 +10,13 @@ public class GameBoard{
     public int addPiece(int column, char player){
         //adds the players chose piece to the correct location in the give column
         //returns the row that the piece was added to
-        return 1;
+        for(int i=rows;i>0;i--){
+            if(gameBoard[i][column].equals("--")){
+                gameBoard[i][column] = player+"";
+                return i;
+            }
+        }
+        //return 1;
     }
 
     boolean checkWin(int row, int column){
@@ -37,21 +43,8 @@ public class GameBoard{
     }
 
     public String rageQuit(char player){
-        System.out.println("You have rage quit the game");
         //Display a broken connect 4 game and a 
         //message about the rageQuit
-        Scanner input = new Scanner(System.in);
-        System.out.println("Player "+player+" has decided to quit. Enter secret code: ");
-        String rage = input.nextLine();
-        rage.toUpperCase();
-        String toReturn;
-        if(rage.equals("I AM VERY MAD")){
-            
-        }else{
-            toReturn = "Ragequit failed!";
-        }
-
-        return toReturn;
 
     }
 }
