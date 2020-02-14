@@ -54,6 +54,7 @@ public class GameBoard{
     }
 
     public String rageQuit(char player){
+        System.out.println("You have rage quit the game!");
         //Display a broken connect 4 game and a 
         //message about the rageQuit
 
