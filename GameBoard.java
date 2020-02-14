@@ -32,7 +32,7 @@ public class GameBoard{
     public String toString(){
         //return a string with the gameBoard 2D array formatted
         //to look like a connect 4 game.
-
+        System.out.println("TEST");
         return "";
     }
 
