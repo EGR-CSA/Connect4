@@ -35,4 +35,10 @@ public class GameBoard{
 
         return "";
     }
+
+    public String rageQuit(char player){
+        //Display a broken connect 4 game and a 
+        //message about the rageQuit
+
+    }
 }
