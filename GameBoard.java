@@ -5,7 +5,7 @@ public class GameBoard{
     
     public GameBoard(){
         //initializes gameBoard with empty spaces
-        String[][] gameBoard = new String[6][7];
+        String[][] gameBoard = new String[6][7];//this line needs to be removed as it is redundant with the private attribute for gameBoard
         for(int i = 0; i < 6; i ++){
             for(int j = 0; j < 7; j++){
                 gameBoard[i][j] = "--";
