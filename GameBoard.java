@@ -1,3 +1,4 @@
+import java.util.*;
 public class GameBoard{
     private final int rows = 6;
     private final int columns = 7;
@@ -34,11 +35,32 @@ public class GameBoard{
 
     int checkInput(int column){
         //check if the column is a valid location to place the player piece
-        //if not, ask for a valid column
-        //return the original column, or the updated column if it was not a valid location
-        
-        return column;
+        Scanner marsh = new Scanner(System.in);
+        boolean x =false;
+        int input1 = column;
+        while(x = false){
+        if(input1<7&&input1>-1){
+        if(gameBoard[input1][0].equals('-')){
+            x=true;
+        }
+        else{
+            System.out.println("That column is full please enter another column");
+            input1 = marsh.nextInt();
+        }
     }
+        //if not, ask for a valid column
+        else{
+            System.out.println("That Column does not exist please enter a number between 1 and 6");
+            input1 = marsh.nextInt();
+        }
+    }
+
+
+
+
+        //return the original column, or the updated column if it was not a valid location
+        return input1;
+}
 
     public String toString(){
         //return a string with the gameBoard 2D array formatted
