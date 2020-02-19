@@ -1,14 +1,13 @@
 public class GameBoard{
     private final int rows = 6;
     private final int columns = 7;
-    private String[][] gameBoard = new String[rows][columns]; 
+    private char[][] gameBoard = new char[rows][columns]; 
     
     public GameBoard(){
         //initializes gameBoard with empty spaces
-        String[][] gameBoard = new String[6][7];//this line needs to be removed as it is redundant with the private attribute for gameBoard
         for(int i = 0; i < 6; i ++){
             for(int j = 0; j < 7; j++){
-                gameBoard[i][j] = "--";
+                gameBoard[i][j] = '-';
             }
         }
     }
@@ -17,8 +16,8 @@ public class GameBoard{
         //adds the players chose piece to the correct location in the give column
         //returns the row that the piece was added to
         for(int i=rows;i>0;i--){
-            if(gameBoard[i][column].equals("--")){
-                gameBoard[i][column] = player+"";
+            if(gameBoard[i][column] == '-'){
+                gameBoard[i][column] = player;
                 return i;
             }
         }
