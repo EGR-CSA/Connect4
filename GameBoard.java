@@ -21,7 +21,7 @@ public class GameBoard{
                 return i;
             }
         }
-        //return 1;
+        return 1;
     }
 
     boolean checkWin(int row, int column){
