@@ -1,7 +1,6 @@
 import java.util.*;
-public class Connect4 {
+public class Connect4{
     public static void main(String[] args) {
-        String secretCode = welcomeScreen();
         //Set up player pieces
         //ask for column to place piece
         //check column (input) for validity or rageQuit
@@ -12,9 +11,35 @@ public class Connect4 {
         //and 2nd player until win condition is met
         //
 
+        Scanner keyboard = new Scanner(System.in);
+        String secretCode = welcomeScreen();
+        System.out.println("Select a character: X or O");
+        char character = keyboard.next().charAt(0);
+        char character2;
 
+        while(character != 'X' || character != 'O'){
+            System.out.println("Please Enter X or O.");
+            character = keyboard.next().charAt(0);
+        }
+        if(character == 'x'){
+            System.out.println("Player One is X");
+            System.out.println("Player Two is O");
+            character2 = 'O';
+        }else{
+            System.out.println("Player One is O");
+            System.out.println("Player Two is X");
+            character2 = 'X';
+        }
 
-
+        System.out.println(temp); // Gonna be the board object
+        System.out.println("Which column do you want to place your piece?");
+        int column = keyboard.nextInt()-1;
+     
+        while(column <= 0 || column > 8){
+            System.out.println("Please enter a valid column (1-7)");
+            column = keyboard.nextInt()-1;
+        }
+        addPiece(column, character);
     }
 
     public static String welcomeScreen(){
@@ -44,6 +69,8 @@ public class Connect4 {
         String input = kb.nextLine();
         return input;
 
-    }
+
+        
+    } //Nope
 
 }
