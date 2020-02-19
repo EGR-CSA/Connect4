@@ -17,6 +17,8 @@ public class Connect4{
         char character = keyboard.next().charAt(0);
         char character2;
         GameBoard board = new GameBoard();
+        boolean gameStatus = false;
+        int row;
 
         while(character != 'X' || character != 'O'){
             System.out.println("Please Enter X or O.");
@@ -32,19 +34,36 @@ public class Connect4{
             character2 = 'X';
         }
 
-        int i = 1; 
-        while(i <= 42 && board.checkWin() != true){
-            System.out.println(board);
+        int i = 0; 
+        while(i <= 42 && !gameStatus){
+            System.out.println(board.toString());
                 System.out.println("Which column do you want to place your piece?");
                 int column = keyboard.nextInt()-1;
                 column = board.checkInput(column);
-            if(i%2 = 0){
-                addPiece(column, character); 
+            if(i%2 == 0){
+                if(column == 69){
+                    board.rageQuit(character);
+                    break;
+                } else{
+                    row = board.addPiece(column, character);
+                } 
             }else{
-                addPiece(column, character2);
+                if(column == 69){
+                    board.rageQuit(character2);
+                    break;
+                } else{
+                    row = board.addPiece(column, character2);
+                } 
             }
-
+            gameStatus = checkWin(row,column);
             i++; 
+        }
+
+        if(gameStatus == true){
+            System.out.println("Congratulations! You won!");
+        }
+        if(i == 43){
+            System.out.println("Well, looks like it's a tie...");
         }
 
     }
