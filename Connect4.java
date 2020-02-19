@@ -16,6 +16,7 @@ public class Connect4{
         System.out.println("Select a character: X or O");
         char character = keyboard.next().charAt(0);
         char character2;
+        GameBoard board = new GameBoard();
 
         while(character != 'X' || character != 'O'){
             System.out.println("Please Enter X or O.");
@@ -31,15 +32,21 @@ public class Connect4{
             character2 = 'X';
         }
 
-        System.out.println(temp); // Gonna be the board object
-        System.out.println("Which column do you want to place your piece?");
-        int column = keyboard.nextInt()-1;
-     
-        while(column <= 0 || column > 8){
-            System.out.println("Please enter a valid column (1-7)");
-            column = keyboard.nextInt()-1;
+        int i = 1; 
+        while(i <= 42 && board.checkWin() != true){
+            System.out.println(board);
+                System.out.println("Which column do you want to place your piece?");
+                int column = keyboard.nextInt()-1;
+                column = board.checkInput(column);
+            if(i%2 = 0){
+                addPiece(column, character); 
+            }else{
+                addPiece(column, character2);
+            }
+
+            i++; 
         }
-        addPiece(column, character);
+
     }
 
     public static String welcomeScreen(){
