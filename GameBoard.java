@@ -158,7 +158,7 @@ public class GameBoard{
         boolean x =false;
         int input1 = column;
         while(x = false){
-        if(input1<7&&input1>-1){
+        if(input1<7&&input1>-1||input1==69){
         if(gameBoard[input1][0]=='-'){
             x=true;
         }
