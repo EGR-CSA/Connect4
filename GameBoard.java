@@ -164,13 +164,13 @@ public class GameBoard{
         }
         else{
             System.out.println("That column is full please enter another column");
-            input1 = marsh.nextInt();
+            input1 = marsh.nextInt()-1;
         }
     }
         //if not, ask for a valid column
         else{
             System.out.println("That Column does not exist please enter a number between 1 and 6");
-            input1 = marsh.nextInt();
+            input1 = marsh.nextInt()-1;
         }
     }
         //return the original column, or the updated column if it was not a valid location
