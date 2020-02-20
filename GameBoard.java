@@ -157,9 +157,9 @@ public class GameBoard{
         Scanner marsh = new Scanner(System.in);
         boolean x =false;
         int input1 = column;
-        while(x = false){
+        while(x == false){
         if(input1<7&&input1>-1||input1==69){
-        if(gameBoard[input1][0]=='-'){
+        if(gameBoard[0][input1]=='-'){
             x=true;
         }
         else{
@@ -173,10 +173,6 @@ public class GameBoard{
             input1 = marsh.nextInt();
         }
     }
-
-
-
-
         //return the original column, or the updated column if it was not a valid location
         return input1;
 }
