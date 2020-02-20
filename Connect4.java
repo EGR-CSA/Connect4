@@ -24,7 +24,7 @@ public class Connect4{
             System.out.println("Please Enter X or O.");
             character = keyboard.next().charAt(0);
         }
-        if(character == 'x'){
+        if(character == 'X'){
             System.out.println("Player One is X");
             System.out.println("Player Two is O");
             character2 = 'O';
