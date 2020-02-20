@@ -13,33 +13,59 @@ public class Connect4{
 
         Scanner keyboard = new Scanner(System.in);
         String secretCode = welcomeScreen();
-        System.out.println("Select a character: X or O");
-        char character = keyboard.next().charAt(0);
+        System.out.println("Select a character: x or o");
+        char character = keyboard.nextLine().toLowerCase().charAt(0);
         char character2;
+        GameBoard board = new GameBoard();
+        boolean gameStatus = false;
+        int row;
 
-        while(character != 'X' || character != 'O'){
-            System.out.println("Please Enter X or O.");
-            character = keyboard.next().charAt(0);
+        while(character != 'x' && character != 'o'){
+            System.out.println("Please Enter x or o.");
+            character = keyboard.nextLine().toLowerCase().charAt(0);
         }
         if(character == 'x'){
-            System.out.println("Player One is X");
-            System.out.println("Player Two is O");
-            character2 = 'O';
+            System.out.println("Player One is x");
+            System.out.println("Player Two is o");
+            character2 = 'o';
         }else{
-            System.out.println("Player One is O");
-            System.out.println("Player Two is X");
-            character2 = 'X';
+            System.out.println("Player One is o");
+            System.out.println("Player Two is x");
+            character2 = 'x';
         }
 
-        System.out.println(temp); // Gonna be the board object
-        System.out.println("Which column do you want to place your piece?");
-        int column = keyboard.nextInt()-1;
-     
-        while(column <= 0 || column > 8){
-            System.out.println("Please enter a valid column (1-7)");
-            column = keyboard.nextInt()-1;
+        int i = 0; 
+        while(i <= 42 && !gameStatus){
+            System.out.println(board.toString());
+                System.out.println("Which column do you want to place your piece?");
+                int column = keyboard.nextInt()-1;
+                column = board.checkInput(column);
+            if(i%2 == 0){
+                if(column == 69){
+                    board.rageQuit(character);
+                    break;
+                } else{
+                    row = board.addPiece(column, character);
+                } 
+            }else{
+                if(column == 69){
+                    board.rageQuit(character2);
+                    break;
+                } else{
+                    row = board.addPiece(column, character2);
+                } 
+            }
+            gameStatus = board.checkWin(row,column);
+            i++; 
         }
-        addPiece(column, character);
+
+        if(gameStatus == true){
+            System.out.println("Congratulations! You won!");
+        }
+        if(i == 43){
+            System.out.println("Well, looks like it's a tie...");
+        }
+
     }
 
     public static String welcomeScreen(){
