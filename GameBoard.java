@@ -26,10 +26,129 @@ public class GameBoard{
     }
 
     boolean checkWin(int row, int column){
-        //checks to see if current player has won the game based on the given 
-        //row and column locations from the parameters
-        //returns true if win condition is met
+        char check = gameBoard[row][column];
+
+
+        //check 1 - verticle
+
+        int j = 4;
+        if((row+3)>5){
+            j--;
+            if((row+2)>5){
+                j--;
+                if((row+1)>5){
+                    j--;
+                }
+            }
+        }
+
+        int k = 0;
+        if((row-3)<0){
+            k++;
+            if((row-2)<0){
+                k++;
+                if((row-1)<0){
+                    k++;
+                }
+            }
+        }
+
+        for(int i=k; i<j; i++){
+            if(gameBoard[row+i-3][column]==(check) && gameBoard[row+i-2][column]==(check) && gameBoard[row+i-1][column]==(check) && gameBoard[row+i][column]==(check)){
+                return true;
+            }
+        }
+
+        //check 2 - horizontal
+
+        j = 4;
+        if((column+3)>6){
+            j--;
+            if((column+2)>6){
+                j--;
+                if((column+1)>6){
+                    j--;
+                }
+            }
+        }
+
+        k = 0;
+        if((column-3)<0){
+            k++;
+            if((column-2)<0){
+                k++;
+                if((column-1)<0){
+                    k++;
+                }
+            }
+        }
+
+        for(int i=k; i<j; i++){
+            if(gameBoard[row][column+i-3]==(check) && gameBoard[row][column+i-2]==(check) && gameBoard[row][column+i-1]==(check) && gameBoard[row][column+i]==(check)){
+                return true;
+            }
+        }
+
+        //check 3 - LU to RD
+
+        j = 4;
+        if((column+3)>6 || (row+3)>5){
+            j--;
+            if((column+2)>6 || (row+2)>5){
+                j--;
+                if((column+1)>6 || (row+1)>5){
+                    j--;
+                }
+            }
+        }
+
+        k = 0;
+        if((column-3)<0 || (row-3)<0){
+            k++;
+            if((column-2)<0 || (row-2)<0){
+                k++;
+                if((column-1)<0 || (row-1)<0){
+                    k++;
+                }
+            }
+        }
+
+        for(int i=k; i<j; i++){
+            if(gameBoard[row+i-3][column+i-3]==(check) && gameBoard[row+i-2][column+i-2]==(check) && gameBoard[row+i-1][column+i-1]==(check) && gameBoard[row+i][column+i]==(check)){
+                return true;
+            }
+        }
+
+        //check 4 - LD to RU
         
+        j = 4;
+        if((column+3)>6 || (row-3)<0){
+            j--;
+            if((column+2)>6 || (row-2)<0){
+                j--;
+                if((column+1)>6 || (row-1)<0){
+                    j--;
+                }
+            }
+        }
+
+        k = 0;
+        if((column-3)<0 || (row+3)>5){
+            k++;
+            if((column-2)<0 || (row+2)>5){
+                k++;
+                if((column-1)<0 || (row+1)>5){
+                    k++;
+                }
+            }
+        }
+
+        for(int i=k; i<j; i++){
+            if(gameBoard[row-i+3][column+i-3]==(check) && gameBoard[row-i+2][column+i-2]==(check) && gameBoard[row-i+1][column+i-1]==(check) && gameBoard[row-i][column+i]==(check)){
+                return true;
+            }
+        }
+
         return false;
     }
 
