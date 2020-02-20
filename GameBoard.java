@@ -16,7 +16,7 @@ public class GameBoard{
     public int addPiece(int column, char player){
         //adds the players chose piece to the correct location in the give column
         //returns the row that the piece was added to
-        for(int i=rows;i>0;i--){
+        for(int i=rows-1;i>=0;i--){
             if(gameBoard[i][column] == '-'){
                 gameBoard[i][column] = player;
                 return i;
