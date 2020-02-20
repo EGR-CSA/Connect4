@@ -55,7 +55,7 @@ public class Connect4{
                     row = board.addPiece(column, character2);
                 } 
             }
-            gameStatus = checkWin(row,column);
+            gameStatus = board.checkWin(row,column);
             i++; 
         }
 
