@@ -40,7 +40,7 @@ public class GameBoard{
         int input1 = column;
         while(x = false){
         if(input1<7&&input1>-1){
-        if(gameBoard[input1][0].equals('-')){
+        if(gameBoard[input1][0]=='-'){
             x=true;
         }
         else{
