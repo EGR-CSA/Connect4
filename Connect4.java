@@ -13,25 +13,25 @@ public class Connect4{
 
         Scanner keyboard = new Scanner(System.in);
         String secretCode = welcomeScreen();
-        System.out.println("Select a character: X or O");
-        char character = keyboard.next().charAt(0);
+        System.out.println("Select a character: x or o");
+        char character = keyboard.nextLine().toLowerCase().charAt(0);
         char character2;
         GameBoard board = new GameBoard();
         boolean gameStatus = false;
         int row;
 
-        while(character != 'X' || character != 'O'){
-            System.out.println("Please Enter X or O.");
-            character = keyboard.next().charAt(0);
+        while(character != 'x' && character != 'o'){
+            System.out.println("Please Enter x or o.");
+            character = keyboard.nextLine().toLowerCase().charAt(0);
         }
-        if(character == 'X'){
-            System.out.println("Player One is X");
-            System.out.println("Player Two is O");
-            character2 = 'O';
+        if(character == 'x'){
+            System.out.println("Player One is x");
+            System.out.println("Player Two is o");
+            character2 = 'o';
         }else{
-            System.out.println("Player One is O");
-            System.out.println("Player Two is X");
-            character2 = 'X';
+            System.out.println("Player One is o");
+            System.out.println("Player Two is x");
+            character2 = 'x';
         }
 
         int i = 0; 
