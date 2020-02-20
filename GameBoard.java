@@ -186,10 +186,11 @@ public class GameBoard{
         //to look like a connect 4 game.
         String connect4Board = "";
         for(int i = 0; i<rows; i++){
+            connect4Board += "- ";
             for(int j = 0; j<columns; j++){
-                connect4Board += "- "+gameBoard[i][j]+" -";
+                connect4Board += gameBoard[i][j]+"-";
             }
-            connect4Board += "\n"; 
+            connect4Board += " -\n"; 
         }
         return connect4Board;
     }
