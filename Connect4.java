@@ -11,6 +11,7 @@ public class Connect4{
         //and 2nd player until win condition is met
         //
 
+        String columnLine;
         Scanner keyboard = new Scanner(System.in);
         String secretCode = welcomeScreen();
         System.out.println("Select a character: x or o");
@@ -38,7 +39,9 @@ public class Connect4{
         while(i <= 42 && !gameStatus){
             System.out.println(board.toString());
                 System.out.println("Which column do you want to place your piece?");
-                int column = keyboard.nextInt()-1;
+                columnLine = keyboard.nextLine().substring(0,1);
+                int column = Integer.parseInt(columnLine) -1;
+
                 column = board.checkInput(column);
             if(i%2 == 0){
                 if(column == 69){
