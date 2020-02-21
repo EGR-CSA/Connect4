@@ -14,6 +14,13 @@ public class GameBoard{
     }
 
     public int addPiece(int column, char player){
+        /** This method checks the rows of one column from bottom to top to find the first open space that a piece can go
+         * Once it finds this place it then puts the char that the current player is associated with into that array slot
+         * and then it returns the value of the row the piece was put in.
+         * @param column
+         * @param player
+         * @return i
+         */
         //adds the players chose piece to the correct location in the give column
         //returns the row that the piece was added to
         for(int i=rows-1;i>=0;i--){
