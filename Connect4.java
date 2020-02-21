@@ -20,6 +20,8 @@ public class Connect4{
         GameBoard board = new GameBoard();
         boolean gameStatus = false;
         int row;
+        int column;
+        boolean bot = false; 
 
         while(character != 'x' && character != 'o'){
             System.out.println("Please Enter x or o.");
@@ -39,12 +41,16 @@ public class Connect4{
         while(i <= 42 && !gameStatus){
             System.out.println(board.toString());
                 System.out.println("Which column do you want to place your piece?");
-                columnLine = keyboard.nextLine().substring(0,1);
-                int column = Integer.parseInt(columnLine) -1;
+                try{
+                    column = keyboard.nextInt()-1;
+                } catch(Exception e){
+                    column = -1;
+                }
 
-                column = board.checkInput(column);
+                
+            board.checkInput(column);
             if(i%2 == 0){
-                if(column == 69){
+                if(column == 68){
                     board.rageQuit(character);
                     break;
                 } else{
