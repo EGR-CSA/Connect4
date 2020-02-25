@@ -38,6 +38,7 @@ public class GameBoard{
 
         //check 1 - verticle
 
+        //set end checkpoint
         int j = 4;
         if((row+3)>5){
             j--;
@@ -49,6 +50,7 @@ public class GameBoard{
             }
         }
 
+        //set begining point
         int k = 0;
         if((row-3)<0){
             k++;
@@ -60,13 +62,14 @@ public class GameBoard{
             }
         }
 
+        //Do all viable verticle checks
         for(int i=k; i<j; i++){
             if(gameBoard[row+i-3][column]==(check) && gameBoard[row+i-2][column]==(check) && gameBoard[row+i-1][column]==(check) && gameBoard[row+i][column]==(check)){
                 return true;
             }
         }
 
-        //check 2 - horizontal
+        //check 2 - horizontal (refrence comments on verticle check on how it works)
 
         j = 4;
         if((column+3)>6){
@@ -96,7 +99,7 @@ public class GameBoard{
             }
         }
 
-        //check 3 - LU to RD
+        //check 3 - LU to RD (refrence comments on verticle check on how it works)
 
         j = 4;
         if((column+3)>6 || (row+3)>5){
@@ -126,7 +129,7 @@ public class GameBoard{
             }
         }
 
-        //check 4 - LD to RU
+        //check 4 - LD to RU (refrence comments on verticle check on how it works)
         
         j = 4;
         if((column+3)>6 || (row-3)<0){
