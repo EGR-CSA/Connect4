@@ -167,25 +167,24 @@ public class GameBoard{
         Scanner marsh = new Scanner(System.in);
         boolean x =false;
         int input1 = column;
-        while(x == false){
-        if(input1<7&&input1>-1||input1==69){
-        if(gameBoard[0][input1]=='-'){
-            x=true;
-        }
-        else{
-            System.out.println("That column is full please enter another column");
-            input1 = marsh.nextInt()-1;
-        }
+        boolean needsCorrection = true;
+        if(!((input1 <= 6 && input1 >= 0) || input1 == 68)){
+            System.out.println("Please enter an integer between 1 and 7");
+            while (needsCorrection==true){
+                try{
+                    input1 = marsh.nextInt()-1;
+                    if ((input1 < 7 && input1 > -1)||input1==68){
+                        needsCorrection=false;
+                    }
+                }catch(Exception e){
+                    System.out.println("Homie you best enter an integer now!");
+                }
+            }
+            return input1;
+        } else
+            return input1;
+
     }
-        //if not, ask for a valid column
-        else{
-            System.out.println("That Column does not exist please enter a number between 1 and 6");
-            input1 = marsh.nextInt()-1;
-        }
-    }
-        //return the original column, or the updated column if it was not a valid location
-        return input1;
-}
 
     public String toString(){
         //return a string with the gameBoard 2D array formatted
