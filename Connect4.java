@@ -58,7 +58,7 @@ public class Connect4{
                     row = board.addPiece(column, character);
                 } 
             }else{
-                if(column == 69){
+                if(column == 68){
                     board.rageQuit(character2);
                     break;
                 } else{
