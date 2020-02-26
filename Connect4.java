@@ -44,11 +44,12 @@ public class Connect4{
                 try{
                     column = keyboard.nextInt()-1;
                 } catch(Exception e){
+                    String trash = keyboard.nextLine();
                     column = -1;
                 }
 
                 
-            board.checkInput(column);
+            column = board.checkInput(column);
             if(i%2 == 0){
                 if(column == 68){
                     board.rageQuit(character);
