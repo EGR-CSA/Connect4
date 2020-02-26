@@ -167,24 +167,44 @@ public class GameBoard{
         Scanner marsh = new Scanner(System.in);
         boolean x =false;
         int input1 = column;
+        String trash = "";
         boolean needsCorrection = true;
-        if(!((input1 <= 6 && input1 >= 0) || input1 == 68)){
-            System.out.println("Please enter an integer between 1 and 7");
-            while (needsCorrection==true){
-                try{
-                    input1 = marsh.nextInt()-1;
-                    if ((input1 < 7 && input1 > -1)||input1==68){
-                        needsCorrection=false;
+            if(!((input1 <= 6 && input1 >= 0) || input1 == 68)||isFull(input1)){
+                while (needsCorrection==true){
+                    System.out.println("Please enter an integer between 1 and 7");
+                    try{
+                        input1 = marsh.nextInt()-1;
+                        if ((input1 <= 6 && input1 >= 0)||input1==68){
+                            if(gameBoard[0][input1]=='-'){
+                                needsCorrection=false;
+                            } else{
+                                System.out.println("That column is full please enter another column.");
+                            }
+                                                       
+                        }
+                    }catch(Exception e){
+                        System.out.println("Homie you best enter an integer now!");
+                        input1 = -1;
+                        trash = marsh.nextLine();
                     }
-                }catch(Exception e){
-                    System.out.println("Homie you best enter an integer now!");
                 }
-            }
-            return input1;
-        } else
-            return input1;
+                return input1;
+            
+            } else
 
-    }
+                return input1;
+        }
+        public boolean isFull(int column){
+            if(gameBoard[0][column]=='-'){
+                return false;
+            }else {
+                System.out.println("column is full");
+                return true;
+            }
+        }
+        
+    
+    
 
     public String toString(){
         //return a string with the gameBoard 2D array formatted
@@ -217,3 +237,45 @@ public class GameBoard{
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+int checkInput(int column){
+    //check if the column is a valid location to place the player piece
+    Scanner marsh = new Scanner(System.in);
+    boolean x =false;
+    int input1 = column;
+    boolean needsCorrection = true;
+    
+        if(!((input1 <= 6 && input1 >= 0) || input1 == 68)){
+            
+            while (needsCorrection==true){
+                System.out.println("Please enter an integer between 1 and 7");
+                try{
+                    input1 = marsh.nextInt()-1;
+                    if ((input1 < 7 && input1 > -1)||input1==68){
+                        needsCorrection=false;
+                    }
+                }catch(Exception e){
+                    System.out.println("Homie you best enter an integer now!");
+                }
+            }
+            return input1;
+        
+        } else
+            return input1;
+    }
+    */
