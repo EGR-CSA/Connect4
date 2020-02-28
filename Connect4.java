@@ -40,7 +40,7 @@ public class Connect4{
         }
 
         int i = 0; 
-        while(i <= 42 && !gameStatus){
+        while(i <= 41 && !gameStatus){
             System.out.println(board.toString());
                 System.out.println("Which column do you want to place your piece?");
                 try{
@@ -51,7 +51,8 @@ public class Connect4{
                 }
   
             column = board.checkInput(column);
-            if(i%2 == 0){
+            i++;
+            if(i%2 == 1){
                 if(column == 68){
                     board.rageQuit(character);
                     break;
@@ -67,14 +68,13 @@ public class Connect4{
                 } 
             }
             gameStatus = board.checkWin(row,column);
-            i++; 
         }
 
         if(gameStatus == true){
             System.out.println("Congratulations! You won!");
             System.out.println(board);
         }
-        if(i == 43){
+        if(i == 42){
             System.out.println("Well, looks like it's a tie...");
             System.out.println(board);
         }
