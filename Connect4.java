@@ -51,6 +51,12 @@ public class Connect4{
                 }
   
             column = board.checkInput(column);
+
+            if (column == 68) {
+                board.rageQuit(character);
+                return;
+            }
+            
             i++;
             if(i%2 == 1){
                 if(column == 68){

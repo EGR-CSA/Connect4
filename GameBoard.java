@@ -163,6 +163,9 @@ public class GameBoard{
     }
 
     int checkInput(int column){
+        if (column == 68) {
+            return 68;
+        }
         //check if the column is a valid location to place the player piece
         Scanner marsh = new Scanner(System.in);
         boolean x =false;
@@ -174,6 +177,9 @@ public class GameBoard{
                     System.out.println("Please enter an integer between 1 and 7");
                     try{
                         input1 = marsh.nextInt()-1;
+                        if (input1 == 68) {
+                            return 68;
+                        }
                         if ((input1 <= 6 && input1 >= 0)||input1==68){
                             if(gameBoard[0][input1]=='-'){
                                 needsCorrection=false;
