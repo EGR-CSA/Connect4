@@ -71,9 +71,11 @@ public class Connect4{
 
         if(gameStatus == true){
             System.out.println("Congratulations! You won!");
+            System.out.println(board);
         }
         if(i == 43){
             System.out.println("Well, looks like it's a tie...");
+            System.out.println(board);
         }
 
     }
