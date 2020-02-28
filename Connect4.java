@@ -15,7 +15,8 @@ public class Connect4{
         Scanner keyboard = new Scanner(System.in);
         String secretCode = welcomeScreen();
         System.out.println("Select a character: x or o");
-        char character = keyboard.nextLine().toLowerCase().charAt(0);
+        String tempCharacter = keyboard.nextLine().toLowerCase();
+        char character;
         char character2;
         GameBoard board = new GameBoard();
         boolean gameStatus = false;
@@ -23,10 +24,11 @@ public class Connect4{
         int column;
         boolean bot = false; 
 
-        while(character != 'x' && character != 'o'){
+        while(!tempCharacter.equals("x") && !tempCharacter.equals("o")){
             System.out.println("Please Enter x or o.");
-            character = keyboard.nextLine().toLowerCase().charAt(0);
+            tempCharacter = keyboard.nextLine().toLowerCase();
         }
+        character = tempCharacter.charAt(0);
         if(character == 'x'){
             System.out.println("Player One is x");
             System.out.println("Player Two is o");
@@ -47,8 +49,7 @@ public class Connect4{
                     String trash = keyboard.nextLine();
                     column = -1;
                 }
-
-                
+  
             column = board.checkInput(column);
             if(i%2 == 0){
                 if(column == 68){
