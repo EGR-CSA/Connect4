@@ -17,8 +17,8 @@ public class GameBoard{
         /** This method checks the rows of one column from bottom to top to find the first open space that a piece can go
          * Once it finds this place it then puts the char that the current player is associated with into that array slot
          * and then it returns the value of the row the piece was put in.
-         * @param column
-         * @param player
+         * @param column an int that is used to determine whch column a connect4 piece goes into
+         * @param player a char that deermines which players piece goes into the selected spot
          * @return i
          */
         //adds the players chose piece to the correct location in the give column
