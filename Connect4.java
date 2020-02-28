@@ -74,7 +74,7 @@ public class Connect4{
             System.out.println("Congratulations! You won!");
             System.out.println(board);
         }
-        if(i == 42){
+        else if(i == 42){
             System.out.println("Well, looks like it's a tie...");
             System.out.println(board);
         }
