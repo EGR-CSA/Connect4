@@ -195,12 +195,15 @@ public class GameBoard{
                 return input1;
         }
         public boolean isFull(int column){
+            if(column!=68){
             if(gameBoard[0][column]=='-'){
                 return false;
             }else {
                 System.out.println("column is full");
                 return true;
             }
+        }else
+        return true;
         }
         
     
@@ -252,7 +255,6 @@ public class GameBoard{
 
 
 /*
-
 int checkInput(int column){
     //check if the column is a valid location to place the player piece
     Scanner marsh = new Scanner(System.in);
