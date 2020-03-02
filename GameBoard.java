@@ -209,7 +209,7 @@ public class GameBoard{
                 return true;
             }
         }else
-        return false;
+        return true;
         }
         
     
